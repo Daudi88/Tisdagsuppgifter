@@ -14,7 +14,7 @@ namespace Tisdagsuppgifter.Uppgifter
             var dt = db.GetDataTable(sql);
             foreach (DataRow row in dt.Rows)
             {
-                Console.WriteLine($"{row["physical_name"]}, );
+                Console.WriteLine($"{row["physical_name"]}, ");
             }
         }
     }

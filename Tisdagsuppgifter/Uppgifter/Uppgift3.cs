@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace Tisdagsuppgifter.Uppgifter
 {
-    class Uppgift3
+    internal class Uppgift3
     {
         public static void Run()
         {
             Console.Write("Ange databasens namn: ");
-            var dataBase = new SQLDatabase(Console.ReadLine());       
+            var dataBase = new SQLDatabase(Console.ReadLine());
             var sql = "SELECT * FROM People WHERE Age > @age1 AND Age < @age2";
             Console.WriteLine("Ange åldrar:");
             var age1 = Console.ReadLine();

@@ -1,20 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
 
 namespace Tisdagsuppgifter.Uppgifter
 {
-    class Uppgift4
+    internal class Uppgift4
     {
         public static void Run()
         {
-            var db = new SQLDatabase();
-            var sql = "SELECT physical_name, size FROM sys.database_files";
-            var dt = db.GetDataTable(sql);
-            foreach (DataRow row in dt.Rows)
+            while (true)
             {
-                Console.WriteLine($"{row["physical_name"]}, ");
+                Console.Write("Ange databas: ");
+                var db = new SQLDatabase(Console.ReadLine());
+                try
+                {
+                    var list = db.GetFilePath();
+                    foreach (var item in list)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Felaktig inmatning! Försök igen.");
+                }
+                finally
+                {
+                    Console.WriteLine("Kul att du ville testa...");
+                }
             }
         }
     }

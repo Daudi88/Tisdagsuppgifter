@@ -5,10 +5,10 @@ namespace Tisdagsuppgifter
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Uppgift3.Run();
-            Console.ReadLine();
+
+            Uppgift9.Run2();
         }
     }
 }
